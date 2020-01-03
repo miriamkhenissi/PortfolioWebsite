@@ -1,8 +1,4 @@
-<?php
-	session_start();
-?>
-
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -68,34 +64,23 @@
                          
                 </div>
 
-                <?php
-                //print_r($_SESSION);
-                if (isset($_SESSION['userId'])){
-                    echo'<div class="gallery-upload">
+                <?php if (isset($_SESSION['userId'])){ ?>
+                <div class="gallery-upload">
                     <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
                         <input type="text" name="filename" placeholder="File name...">
                         <input type="text" name="filetitle" placeholder="Image title...">
                         <input type="text" name="filedesc" placeholder="Image description...">
-                        <input class="submit-btn" type="file" name="file" label="uploadfile" > ';
-                        /* <div class="radio-toolbar">
-                        <input type="radio" id="radioPrivate" name="radioPrivacy" value="private" checked>
+                        <input class="submit-btn" type="file" name="file" label="uploadfile" >
 
-                        ';
-                        if (isset($privacy) && $privacy=="Private") echo "checked";
-                        echo ' <label for="radioPrivate">Private</label> ';
-
-                        echo' <input type="radio" id="radioPublic" name="radioPrivacy" value="public" >
-                        <label for="radioPublic">Public</label>
-                        ';
-                        if (isset($privacy) && $privacy=="Public") echo "checked";
-                        echo ' </div> */
-                        echo '<button  type="submit" name="submit">Upload</button>
+                        <div class="visibility-option">
+                        <label>Private <input type="radio" name="visibility" value="1" checked /></label>
+                        <span> | </span>
+                        <label>Public <input type="radio" name="visibility" value="0" /></label>
+                        </div>
+                        <button  type="submit" name="submit">Upload</button>
                     </form>
-                </div>';
-                }
-
-                ?>
-
+                </div>
+                <?php } ?>
             </div>
         </section>
 

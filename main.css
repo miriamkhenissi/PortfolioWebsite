@@ -272,7 +272,10 @@ form input{
 	border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
+}
 
+.gallery-upload .visibility-option {
+    margin: 10px 0; 
 }
 
 .gallery-upload input[type="text"]{
