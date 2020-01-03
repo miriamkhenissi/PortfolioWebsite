@@ -90,7 +90,7 @@ $current_use = isset($_SESSION['userId']) && !empty($_SESSION['userId']) ? $_SES
                         <input type="text" name="filedesc" placeholder="Image description...">
                         <input class="submit-btn" type="file" name="file" label="uploadfile" >
 
-                        <div class="visibility-option">
+                        <div class="visibility-option">';
                         <label>Private <input type="radio" name="visibility" value="1" checked /></label>
                         <span> | </span>
                         <label>Public <input type="radio" name="visibility" value="0" /></label>
