@@ -59,11 +59,10 @@
                             } else {
                                 mysqli_stmt_bind_param($stmt, "sssss", $imageTitle, $imageDesc, $imageFullName, $setImageOrder, $userGallery);
                                 mysqli_stmt_execute($stmt);
-
+                                $insertedId = mysqli_stmt_insert_id($stmt);
+                                update_meta($insertedId,'visibility',$imageVisibility);
                                 move_uploaded_file($fileTempName, $fileDestination);
-
                                 header("Location: ../gallery.php?upload=success");
-    
                             }
 
                         }
