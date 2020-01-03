@@ -244,13 +244,29 @@ box-shadow: 10px 10px 65px -23px rgba(0,0,0,0.75);
     opacity: 0.8;
 }
 
-.gallery-container a div{
+.gallery-container a div {
     width: 16.3vw;
     height: 16.3vw;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
 }
+
+.gallery-container a div .lock {
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M17 9.761v-4.761c0-2.761-2.238-5-5-5-2.763 0-5 2.239-5 5v4.761c-1.827 1.466-3 3.714-3 6.239 0 4.418 3.582 8 8 8s8-3.582 8-8c0-2.525-1.173-4.773-3-6.239zm-8-4.761c0-1.654 1.346-3 3-3s3 1.346 3 3v3.587c-.927-.376-1.938-.587-3-.587s-2.073.211-3 .587v-3.587zm3 17c-3.309 0-6-2.691-6-6s2.691-6 6-6 6 2.691 6 6-2.691 6-6 6zm2-6c0 1.104-.896 2-2 2s-2-.896-2-2 .896-2 2-2 2 .896 2 2z"/></svg>');
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background-color: #ffffffcc;
+    background-size: 20px;
+    border-radius: 4px;
+}
+
+
+
 
 .gallery-container a h3{
     margin-top: 10px;
@@ -263,13 +279,13 @@ form input{
 }
 
 .gallery-upload{
-	max-width: 40vw;
-	padding: 10px 20px;
-	background: #f8f1e5;
-	margin: 10px auto;
-	padding: 20px;
-	background: #f8f1e5;
-	border-radius: 8px;
+    max-width: 40vw;
+    padding: 10px 20px;
+    background: #f8f1e5;
+    margin: 10px auto;
+    padding: 20px;
+    background: #f8f1e5;
+    border-radius: 8px;
     font-family: 'Montserrat', sans-serif;
     text-align: center;
 }
@@ -280,44 +296,44 @@ form input{
 
 .gallery-upload input[type="text"]{
     font-family: 'Montserrat', sans-serif;
-	background:white;
-	border: none;
-	border-radius: 4px;
-	font-size: 15px;
-	margin: 0;
-	outline: 0;
-	padding: 10px;
+    background:white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
     width: 70%;
     vertical-align: middle;
-	box-sizing: border-box; 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
-	background-color: white;
-	color: #a64ac9;
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	margin-bottom: 30px;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: white;
+    color: #a64ac9;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
 }
 
 .gallery-upload input[type="file"]{
     font-family: 'Montserrat', sans-serif;
-	background:white;
-	border: none;
-	border-radius: 4px;
-	font-size: 15px;
-	margin: 0;
-	outline: 0;
-	padding: 10px;
+    background:white;
+    border: none;
+    border-radius: 4px;
+    font-size: 15px;
+    margin: 0;
+    outline: 0;
+    padding: 10px;
     width: 70%;
     vertical-align: middle;
-	box-sizing: border-box; 
-	-webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box; 
-	background-color: white;
-	color: #a64ac9;
-	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-	margin-bottom: 30px;
+    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box; 
+    background-color: white;
+    color: #a64ac9;
+    -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+    margin-bottom: 30px;
 }
 
 /* .radio-toolbar input[type="radio"] {
@@ -507,29 +523,3 @@ form input{
     color: #f8f1e5;
     text-decoration: none;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

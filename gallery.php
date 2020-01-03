@@ -1,4 +1,8 @@
 <?php session_start(); ?>
+<?php
+include_once 'includes/dbh.inc.php';
+$current_use = isset($_SESSION['userId']) && !empty($_SESSION['userId']) ? $_SESSION['userId'] : 0;
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -34,10 +38,20 @@
                 <h2> Gallery </h2>
                 <div class="gallery-container">
                     <?php
-                        include_once 'includes/dbh.inc.php';
-
                         //public gallery
-                        $sql = "SELECT * FROM gallery ORDER BY orderGallery DESC";
+                        $sql = "
+                            SELECT * FROM ( 
+                                SELECT DISTINCT idGallery FROM gallery AS G 
+                                INNER JOIN meta AS M ON M.picture_id = G.idGallery 
+                                AND M.meta_key = 'visibility' 
+                                AND M.meta_value != 1 OR M.meta_value = 1 
+                                AND G.userGallery = ".$current_use." 
+                                LIMIT 50 
+                            ) AS ID 
+                            INNER JOIN gallery AS G ON G.idGallery = ID.idGallery 
+                            INNER JOIN meta AS M ON M.picture_id = G.idGallery 
+                            AND M.meta_key = 'visibility' ORDER BY orderGallery DESC
+                        ";
 
                         //private gallery
                         //$userGallery = $_SESSION['userId'];
@@ -49,22 +63,26 @@
                         } else {
                             mysqli_stmt_execute($stmt);
                             $result = mysqli_stmt_get_result($stmt);
+                            while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                            while ($row = mysqli_fetch_assoc($result)) {
-                                echo' <a href="#">
-                                <div style="background-image: url(img/gallery/'.$row["imgFullNameGallery"].');"></div>
-                                <h3> '.$row["titleGallery"].'</h3>
-                                <p> '.$row["descGallery"].' </p>
-                                </a> ';
+                                <a href="#">
+                                    <div 
+                                        style="background-image: url(img/gallery/<?= $row["imgFullNameGallery"]; ?>);"
+                                    >
+                                        <?= $row["meta_value"] == '1' ? '<div class="lock"></div>' : '' ?>
+                                    </div>
+                                    <h3><?= $row["titleGallery"] ?></h3>
+                                    <p><?= $row["descGallery"] ?></p>
+                                </a>
                                
-                            }
+                            <?php }
 
                         }
                         ?>
                          
                 </div>
 
-                <?php if (isset($_SESSION['userId'])){ ?>
+                <?php if (isset($current_use)){ ?>
                 <div class="gallery-upload">
                     <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
                         <input type="text" name="filename" placeholder="File name...">
