@@ -89,16 +89,3 @@ function update_meta($id,$key,$value) {
 	}
 }
 
-/*
-*This function will allow you to delete a meta key (the row) from the database 
-*by providing a pictrue id and a key.
-*/
-function delete_meta($id,$key) {
-
-	global $conn;
-
-	$sql = "DELETE FROM `meta` WHERE `picture_id` = $id AND `meta_key` = '$key'";
-	$query = mysqli_query($conn, $sql);
-	return $query;	
-	
-}
