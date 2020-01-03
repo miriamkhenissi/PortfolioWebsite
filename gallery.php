@@ -18,6 +18,7 @@
                 <a href="#">About</a>
                 <a href="gallery.php">Portfolio</a>
                 <a href="#">Contact</a>
+                <a href="contact.php">Contact</a>
             </div>
 
             <div class="icons">
