@@ -10,6 +10,7 @@
         }
         $imageTitle = $_POST['filetitle']; //the file title is stored in the $imageTitle variable
         $imageDesc = $_POST['filedesc'];
+        $imageVisibility = (bool) $_POST['visibility'];
         $userGallery = $_SESSION['userId'];
 
         $file = $_FILES['file'];
@@ -27,6 +28,7 @@
 
         //what file types are allowed
         $allowed = array("jpg","jpeg","png");
+
 
         //error handling
         if (in_array($fileActualExt, $allowed)) {  // the in_array method checks if $fileActualExt is included in the $allowed array

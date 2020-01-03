@@ -5,8 +5,7 @@
 <main>
 <h1> Sign up </h1>
 <?php
-    if( isset($_GET['error']))
-    {
+    if( isset($_GET['error'])){
         if($_GET['error'] == 'emptyfields')
         {
             echo"<p class='signuperror'> Fill in all fields! </p>";
@@ -37,8 +36,7 @@
         }
     }
 
-    else if(isset($_GET['sign']) && $_GET['sign'] == 'success')
-    {
+    else if(isset($_GET['sign']) && $_GET['sign'] == 'success'){
         echo"<p class='signupsuccess'> You are now signed up! </p>";
     }
 ?>

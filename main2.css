@@ -64,7 +64,7 @@ p{
 }
 
 
-.nav a{
+.nav a {
     color: #ffb48f;
     text-decoration: none;
     margin-right: 20px;
@@ -107,13 +107,13 @@ form input{
     border-radius: 10px;
 }
 
-button{
+button,
+.btn {
     background: #a64ac9;
     padding: 10px;
     border-radius: 15px;
-    color: #f8f1e5;
+    color: #f8f1e5 !important;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 button:hover{
