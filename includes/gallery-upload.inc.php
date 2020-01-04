@@ -11,11 +11,9 @@
         $imageTitle = $_POST['filetitle']; //the file title is stored in the $imageTitle variable
         $imageDesc = $_POST['filedesc'];
         $imageVisibility = (bool) $_POST['visibility'];
-        $userGallery = $_SESSION['userId'];
+        $userGallery = isset($_SESSION['userId']) && !empty($_SESSION['userId']) ? $_SESSION['userId'] : false;
 
         $file = $_FILES['file'];
-
-        //print_r($file); //test to get information about the file like size
 
         $fileName = $file["name"]; //when testing print_r we got an array with info, we are now grabbing the name info from that array
         $fileType = $file["type"];
