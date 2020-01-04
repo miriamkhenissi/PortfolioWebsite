@@ -32,7 +32,10 @@ if(isset($_POST['email']) && !empty($_POST['email'])) {
 <?php require('header.php'); ?>
 	<div class="container">
 		<div class="subscription-notification">
-			<h1><?= $message ?></h1>
+			<div>
+				<h1><?= $message ?></h1>
+				<div><a href="index.php">Go back to home page</a></div>
+			</div>
 		</div>
 	</div>
 <?php require('footer.php'); ?>
