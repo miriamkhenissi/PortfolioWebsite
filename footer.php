@@ -41,7 +41,7 @@
 					<div class="col-lg-3 col-md-6 footer-newsletter">
 						<h4>My Newsletter</h4>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>				
-						<form accept="" method="post">
+						<form method="POST" action="subscribe.php">
 							<input type="email" name="email">
 							<input type="submit" value="Subscribe">
 						</form>
@@ -50,12 +50,8 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="copyright">
-				&copy; Copyright <strong>MayaKh.com</strong>. All Rights Reserved
-			</div>
-			<div class="credits">
-				Designed by <a href="#">MayaKh.com</a>
-			</div>
+			<div class="copyright">© Copyright <strong>MayaKh.com</strong>. All Rights Reserved </div>
+			<div class="credits"> Designed by <a href="#">MayaKh.com</a> </div>
 		</div>
 	</footer>
 

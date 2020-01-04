@@ -19,7 +19,7 @@
         <nav> 
         <div class="nav">
             <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="logo"></a>
                 <a href="#">About</a>
                 <a href="gallery.php">Portfolio</a>
                 <a href="contact.php">Contact</a>

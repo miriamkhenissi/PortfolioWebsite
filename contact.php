@@ -1,19 +1,25 @@
 <html>
 <head>
-		<title>Contact</title>
+        <title>Contact</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">        <link rel='stylesheet' type='text/css' media='screen' href='main2.css'>
-    <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link 
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+        crossorigin="anonymous"
+        rel="stylesheet"
+        >
+        <link rel='stylesheet' type='text/css' media='screen' href='main2.css'>
+        <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
 	<main>
-	<div class="nav">
+        <div class="nav">
             <div class="logo">
-                <a href="index.html"><img src="img/logo.png" alt="logo"></a>
+                <a href="index.php"><img src="img/logo.png" alt="logo"></a>
                 <a href="#">About</a>
                 <a href="gallery.php">Portfolio</a>
                 <a href="contact.php">Contact</a>
@@ -54,10 +60,9 @@
                     </div>
                 </div>
             </form>
-</div>
+        </div>
+    </main>
 </body>
 
 </html>
-<?php
-require"footer.php";
-?>
+<?php require"footer.php"; ?>

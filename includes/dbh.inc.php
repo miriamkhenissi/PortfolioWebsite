@@ -46,6 +46,14 @@ if(isset($_GET['install']) && $_GET['install'] === 'true') {
 	$sql.= ') ENGINE=InnoDB DEFAULT CHARSET=utf8; ';
 
 	mysqli_query($conn, $sql);
+
+	//Create meta database table.
+	$sql = 'CREATE TABLE subscribers ( ';
+	$sql.= 'id int(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY, ';
+	$sql.= 'email longtext ';
+	$sql.= ') ENGINE=InnoDB DEFAULT CHARSET=utf8; ';
+
+	mysqli_query($conn, $sql);
 }
 
 /*
