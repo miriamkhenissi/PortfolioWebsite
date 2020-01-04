@@ -41,9 +41,13 @@
     }
 ?>
     <form action="includes/signup.inc.php" method="post">
+        <label for="uid">Username</label>
         <input type = "text" name="uid" placeholder="Username" >
+        <label for="mail">E-mail</label>
         <input type = "text" name="mail" placeholder="E-mail">
+        <label for="pwd">Password</label>
         <input type = "password" name="pwd" placeholder="Password">
+        <label for="pwd-repeat">Repeat Password</label>
         <input type = "password" name="pwd-repeat" placeholder="Repeat password">
         <button type="submit" name="signup-submit">Signup</button>
 
