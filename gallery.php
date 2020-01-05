@@ -53,7 +53,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 <?php } ?>
                 </div>
             </div>
-            <?php if (isset($is_logged_in)){ ?>
+            <?php if($is_logged_in){ ?>
             <div class="gallery-upload">
                 <h4>Upload an image</h4>
                 <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">

@@ -22,26 +22,26 @@
                     <table class="table table-bordered">
                         <thead>
                             <tr>
-                                <th>ID</th>
-                                <th>Image Title</th>
-                                <th>Image Order</th>
-                                <th>Image Details</th>
+                                <th style="width: 3%">ID</th>
+                                <th style="width: 54%">Image Title</th>
+                                <th style="width: 13%">Image Order</th>
+                                <th style="width: 30%">Image Details</th>
                             </tr>
                         </thead>
                         <?php foreach($list as $item){ ?>
                             <tr>
-                                <td><?= $item["idGallery"]; ?></td>
-                                <td><?= $item["titleGallery"]; ?></td>
-                                <td><?= $item["orderGallery"]; ?></td>
-                                <td><?= $item["descGallery"]; ?></td>
+                                <td style="width: 3%"><?= $item["idGallery"]; ?></td>
+                                <td style="width: 54%"><?= $item["titleGallery"]; ?></td>
+                                <td style="width: 13%"><?= $item["orderGallery"]; ?></td>
+                                <td style="width: 30%"><?= $item["descGallery"]; ?></td>
                             </tr>
                         <?php } ?>
                         <tfoot>
                             <tr>
-                                <th>ID</th>
-                                <th>Image Title</th>
-                                <th>Image Order</th>
-                                <th>Image Details</th>
+                                <th style="width: 3%">ID</th>
+                                <th style="width: 54%">Image Title</th>
+                                <th style="width: 13%">Image Order</th>
+                                <th style="width: 30%">Image Details</th>
                             </tr>
                         </tfoot>                        
                     </table>
