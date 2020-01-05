@@ -1,4 +1,69 @@
-* {
+.navigation {
+  margin: 30px 0;
+}
+
+.navigation .login-form {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navigation input[type="text"],
+.navigation input[type="password"] {
+  width: 130px;
+  margin: 0 10px 0 0px;
+  padding: 0 10px;
+  line-height: 1.2;
+  border: 1px solid #dfdfdf;
+  height: 35px;
+  border-radius: 4px;
+}
+
+.navigation button,
+.navigation .sign-up-btn {
+  display: inline-block;
+  margin: 0;
+  padding: 5px 15px;
+  background: #a64ac9;
+  color: white;
+  border: 0;
+  height: 33px;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.navigation .alt.sign-up-btn {
+  background: transparent;
+  border: 2px solid #a64ac9;
+  color: #a64ac9;
+}
+
+.main-menu {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.main-menu li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.main-menu li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #a64ac9;
+}
+
+.main-menu li a .logo {
+  width: 60px;
+}
+
+
+/** {
   margin: 0;
   padding: 0;
   border: 0;
@@ -58,10 +123,13 @@ p {
   margin-top: 10px;
 }
 
+*/
+
 
 /*----- Nav ---------*/
 
-.nav {
+
+/*.nav {
   display: flex;
   align-items: center;
   height: 100px;
@@ -134,10 +202,13 @@ button:hover {
   align-items: center;
   min-height: 400px;
 }
+*/
 
 
 /*----  Footer -------*/
 
+
+/*
 #footer {
   background: #a64ac9;
   padding: 0 0 30px 0;
@@ -282,10 +353,13 @@ button:hover {
   color: #f8f1e5;
   text-decoration: none;
 }
+*/
 
 
 /* table */
 
+
+/*
 table {
   font-family: 'Montserrat', sans-serif;
   border-collapse: collapse;
@@ -313,3 +387,4 @@ table th {
   background-color: #ffb48f;
   color: white;
 }
+*/

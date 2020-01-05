@@ -1,6 +1,11 @@
-<?php
-require"header.php";
-?>
+<?php $title = "Account"; ?>
+<?php require("header.php"); ?>
+
+
+
+
+
+
 
 <main>
 <?php
@@ -64,6 +69,4 @@ echo"<p class='login-status'> You are logged out! </p>";
 ?>
 </main>
 
-<?php
-require"footer.php";
-?>
+<?php require("footer.php"); ?>
