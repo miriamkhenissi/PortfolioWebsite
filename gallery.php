@@ -35,7 +35,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
         <div class="container">
             <h2>Gallery</h2>
             <div class="main-gallery">
-                <div class="row">
+                <div class="cols-row">
                 <?php foreach ($list as $item) { ?>
                     <div class="column">
                         <div class="item">
