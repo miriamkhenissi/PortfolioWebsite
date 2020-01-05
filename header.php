@@ -2,7 +2,15 @@
     session_start();
     $session = $_SESSION;
     $is_logged_in = isset($_SESSION['userId']) ? true : false;
+    $current_user = false;
 
+    if(isset($_SESSION['userId']) && isset($_SESSION['userUid'])) {
+        $current_user = (object) ['ID' => $_SESSION['userId'], 'username' => $_SESSION['userUid']];
+    }else {
+        $current_user = (object) ['ID' => 0, 'username' => 0];
+    }
+
+    include("includes/dbh.inc.php");
 ?>
 
 <!DOCTYPE html>
@@ -36,7 +44,16 @@
                             <li><a href="contact.php">Contact</a></li>
                         </ul>
                     </div>
-                    <?php if(isset($show_login_form) && $show_login_form){ ?>
+                    <?php if(isset($show_tools_menu) && $show_tools_menu){ ?>
+                        <div class="col-sm-12 col-md-7 text-right left-menu icons">
+                            <ul>
+                                <li><a href="user.php"><i class="fa fa-user"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                                <li><a href="#"><i class="fa fa-behance"></i></a></li>
+                                <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    <?php } else { ?>
                         <div class="col-sm-12 col-md-7 text-right login-form">
                             <?php if($is_logged_in) { ?>
                                 <form action="includes/logout.php" method="post">
@@ -50,15 +67,6 @@
                                     <a href="signup.php" class="alt sign-up-btn">Sign up</a>
                                 </form>
                             <?php } ?>
-                        </div>
-                    <?php } else { ?>
-                        <div class="col-sm-12 col-md-7 text-right left-menu icons">
-                            <ul>
-                                <li><a href="user.php"><img src="img/user.png" alt="User"></a></li>
-                                <li><a href="#"><img src="img/instagram.png" alt="insta"></a></li>
-                                <li><a href="#"><img src="img/behance.png" alt="behance"></a></li>
-                                <li><a href="#"><img src="img/linkedin.png" alt="linkedin"></a></li>
-                            </ul>
                         </div>
                     <?php } ?>
                 </div>

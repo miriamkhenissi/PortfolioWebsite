@@ -1,27 +1,30 @@
+<footer id="footer" class="footer">
+	<div class="footer-top">
+		<div class="container">
+			<div class="row">
 
-<body>
-<div class="content">
-
-</div>
-	<footer id="footer">
-		<div class = "footer-top">
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-4 col-md-6 footer-info">
-						<h3>MayaKh</h3>
+				<div class="widget col-12 col-md-6 col-lg-4 footer-info">
+					<div class="inner-widget">
+						<h3 class="widget-title" style=" text-transform: uppercase; font-weight: 300; ">MayaKh</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
 					</div>
-					<div class="col-lg-2 col-md-6 footer-links">
-						<h4>Quick links</h4>
+				</div>
+
+				<div class="widget col-12 col-md-6 col-lg-2 footer-links">
+					<div class="inner-widget">
+						<h3 class="widget-title">Quick links</h3>
 						<ul>
 							<li><a href="#">Link</a></li>
 							<li><a href="#">Link</a></li>
 							<li><a href="#">Link</a></li>
-							<li><a href="#">Link</a></li>							
+							<li><a href="#">Link</a></li>
 						</ul>
 					</div>
-					<div class="col-lg-3 col-md-6 footer-contact">
-						<h4>Contact me</h4>
+				</div>
+
+				<div class="widget col-12 col-md-6 col-lg-3 footer-contact">
+					<div class="inner-widget">
+						<h3 class="widget-title">Contact me</h3>
 						<p> 39/02 <br>
 							CodeBase <br>
 							Edinburgh <br>
@@ -30,33 +33,35 @@
 							<strong>Phone:</strong> +44 07498912518 <br>
 							<strong>Email:</strong> MayaKh@gmail.com <br>
 						</p>
-						<div class="social-links">
-							<a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-							<a href="#" class="facebook"><i class="fa fa-facebook"></i></a>	
-							<a href="#" class="instagram"><i class="fa fa-instagram"></i></a>	
-							<a href="#" class="behance"><i class="fa fa-behance"></i></a>							
-							<a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>					
-						</div>
+						<ul class="social-links">
+							<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+							<li><a href="#" class="facebook"><i class="fa fa-facebook"></i></a></li>	
+							<li><a href="#" class="instagram"><i class="fa fa-instagram"></i></a></li>	
+							<li><a href="#" class="behance"><i class="fa fa-behance"></i></a></li>							
+							<li><a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a></li>					
+						</ul>
 					</div>
-					<div class="col-lg-3 col-md-6 footer-newsletter">
-						<h4>My Newsletter</h4>
+				</div>
+
+				<div class="widget col-12 col-md-6 col-lg-3 footer-newsletter">
+					<div class="inner-widget">
+						<h3 class="widget-title">My Newsletter</h3>
 						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>				
-						<form method="POST" action="subscribe.php">
-							<input type="email" name="email">
-							<input type="submit" value="Subscribe">
+						<form method="POST" action="subscribe.php" class="subscribe-form">
+							<input type="email"  placeholder="Email address" name="email">
+							<!-- <input class="send" type="submit" value="Subscribe"> -->
+							<button class="send" type="submit"><i class="fa fa-paper-plane"></i></button>
 						</form>
 					</div>
 				</div>
+
 			</div>
 		</div>
+	</div>
+	<div class="bottom-footer">
 		<div class="container">
-			<div class="copyright">© Copyright <strong>MayaKh.com</strong>. All Rights Reserved </div>
-			<div class="credits"> Designed by <a href="#">MayaKh.com</a> </div>
+			<p><small>© Copyright <strong>MayaKh.com</strong>. All Rights Reserved</small></p>
+			<p class="credits"><small>Designed by <a href="#">MayaKh.com</a></small></p>
 		</div>
-	</footer>
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/script.js"></script>
-</body>
-</html>
+	</div>
+</footer>
