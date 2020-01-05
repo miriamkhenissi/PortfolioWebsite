@@ -37,7 +37,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             <div class="main-gallery">
                 <div class="row">
                 <?php foreach ($list as $item) { ?>
-                    <div class="col-12 col-sm-6 col-md-3">
+                    <div class="column">
                         <div class="item">
                             <a href="#">
                                 <div class="picture" style="background-image:url(img/gallery/<?= $item["imgFullNameGallery"]; ?>);">
@@ -59,7 +59,7 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
                 <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
                     <div class="field"><input type="text" name="filename" placeholder="File name..." /></div>
                     <div class="field"><input type="text" name="filetitle" placeholder="Image title..." /></div>
-                    <div class="field"><input type="text" name="filedesc" placeholder="Image description..." /></div>
+                    <div class="field"><textarea name="filedesc" placeholder="Image description..."></textarea></div>
                     <div class="visibility-option">
                         <label>Private <input type="radio" name="visibility" value="1" checked /></label>
                         <span> | </span>
