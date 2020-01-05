@@ -20,7 +20,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title><?= isset($title) ? "MAYAKH | $title" : "MAYAKH"; ?></title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
-    <link href='main2.css' rel='stylesheet' type='text/css' media='screen' />
+    <link href='main.css' rel='stylesheet' type='text/css' media='screen' />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One&display=swap" rel="stylesheet" />
