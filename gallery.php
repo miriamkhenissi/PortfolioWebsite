@@ -57,16 +57,25 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             <div class="gallery-upload">
                 <h4>Upload an image</h4>
                 <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
-                    <div class="field"><input type="text" name="filename" placeholder="File name..." /></div>
-                    <div class="field"><input type="text" name="filetitle" placeholder="Image title..." /></div>
-                    <div class="field"><textarea name="filedesc" placeholder="Image description..."></textarea></div>
+                    <fieldset>
+                            <legend>Personalia:</legend>
+                    <div class="field">    <label for="peas">Do you like peas?</label>
+<input type="text" name="filename" placeholder="File name..." /></div>
+                    <div class="field">    <label for="peas">Do you like peas?</label>
+<input type="text" name="filetitle" placeholder="Image title..." /></div>
+                    <div class="field">    <label for="peas">Do you like peas?</label>
+<textarea name="filedesc" placeholder="Image description..."></textarea></div>
                     <div class="visibility-option">
-                        <label>Private <input type="radio" name="visibility" value="1" checked /></label>
+                        <label>Private     <label for="peas">Do you like peas?</label>
+<input type="radio" name="visibility" value="1" checked /></label>
                         <span> | </span>
-                        <label>Public <input type="radio" name="visibility" value="0" /></label>
+                        <label>Public     <label for="peas">Do you like peas?</label>
+<input type="radio" name="visibility" value="0" /></label>
                     </div>
-                    <div class="field"><input type="file" name="file"/></div>                            
+                    <div class="field">    <label for="peas">Do you like peas?</label>
+<input type="file" name="file"/></div>                            
                     <button  type="submit" name="submit">Upload</button>
+                    </fieldset>
                 </form>
             </div>
             <?php } ?>            
