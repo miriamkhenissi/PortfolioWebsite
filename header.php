@@ -33,6 +33,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12 col-md-5">
+                        <?php /* ?>
                         <ul class="main-menu">
                             <li>
                                 <a href="index.php">
@@ -43,6 +44,7 @@
                             <li><a href="gallery.php">Portfolio</a></li>
                             <li><a href="contact.php">Contact</a></li>
                         </ul>
+                        <?php */ ?>
                     </div>
                     <?php if(isset($show_tools_menu) && $show_tools_menu){ ?>
                         <div class="col-sm-12 col-md-7 text-right left-menu icons">

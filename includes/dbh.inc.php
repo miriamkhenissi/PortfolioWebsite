@@ -1,4 +1,8 @@
 <?php
+//DEFINES
+define(ADMIN_SESSION_NAME, '__admin-session');
+define(ADMIN_SESSION_LENGTH, 86400); //24 hours
+
 //database info
 $servername = "localhost";
 $dBUser = "root";
@@ -110,3 +114,44 @@ function delete_meta($id,$key) {
 	return $query;	
 	
 }
+
+
+function add_post_action($name, $callback){
+	if(isset($_POST[$name])){
+		$callback();
+	}
+}
+
+
+
+
+
+add_post_action('__admin_login',function(){
+
+	$username = false;
+	$password = false;
+	$errors = [];
+
+
+	if(isset($_POST['username']) && !empty($_POST['username']))
+		$username = $_POST['username'];
+
+	if(isset($_POST['password']) && !empty($_POST['password']))
+		$password = $_POST['password'];
+
+
+	if(!$username || !$password) 
+		array_push($errors, 'Error username or password');
+
+	if($errors)
+		$GLOBALS['__temporary-errors'] = $errors;
+
+	
+
+
+});
+
+
+
+
+

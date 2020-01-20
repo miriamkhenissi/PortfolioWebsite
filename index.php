@@ -12,7 +12,7 @@
                         <div class="landingL">
                             <h1 class="section-title">Miriam Khenissi</h1>
                             <div class="content">
-                                <p>Hello! I'm a <span style="color:#a64ac9;font-weight:bold">Designer, Developer & Film maker</span> focused on creating coherent and aesthetically pleasing visual interfaces.</p>
+                                <p>Hello! I'm a <span style="color:#000;font-weight:bold">Designer, Developer & Film maker</span> focused on creating coherent and aesthetically pleasing visual interfaces.</p>
                                 <ul>
                                     <li>Graphic Designer</li>
                                     <li>Web Designer</li>
