@@ -1,7 +1,8 @@
 <?php
-//DEFINES
-define(ADMIN_SESSION_NAME, '__admin-session');
-define(ADMIN_SESSION_LENGTH, 86400); //24 hours
+
+//DEFINE ADMIN SESSION KEYS
+define('ADMIN_SESSION_NAME', '__admin-session');
+
 
 //database info
 $servername = "localhost";
@@ -26,6 +27,7 @@ if(isset($_GET['install']) && $_GET['install'] === 'true') {
 	$sql.= 'uidUsers varchar(11) NOT NULL, ';
 	$sql.= 'emailUsers tinytext NOT NULL, ';
 	$sql.= 'pwdUsers longtext ';
+	$sql.= 'role tinytext NULL DEFAULT NULL';
 	$sql.= ') ENGINE=InnoDB DEFAULT CHARSET=latin1; ';
 	mysqli_query($conn, $sql);
 
@@ -115,6 +117,12 @@ function delete_meta($id,$key) {
 	
 }
 
+function is_admin_loggedin(){
+	session_start();
+	return isset($_SESSION[ADMIN_SESSION_NAME]) && 
+		   isset($_SESSION[ADMIN_SESSION_NAME]['current_user']) &&
+		   !empty($_SESSION[ADMIN_SESSION_NAME]['current_user']) ? true : false;
+}
 
 function add_post_action($name, $callback){
 	if(isset($_POST[$name])){
@@ -122,15 +130,12 @@ function add_post_action($name, $callback){
 	}
 }
 
-
-
 add_post_action('__admin_login',function(){
 
 	//Check if a username and a password been provided.
 	$username = false;
 	$password = false;
 	$errors = [];
-
 
 	if(isset($_POST['username']) && !empty($_POST['username']))
 		$username = $_POST['username'];
@@ -151,8 +156,8 @@ add_post_action('__admin_login',function(){
 	$query = mysqli_query($conn, $sql);
 	$result = mysqli_fetch_assoc($query);
 
-	//If the result is empty then ther is no user.
-	if(empty($result))
+	//If the result is empty then ther is no user, or the fetched result doesn't have an admin role...
+	if(empty($result) || 'admin' !== $result['role'])
 		array_push($errors, "Email or username doesn't exist.");
 
 	//Check if the password matches
@@ -163,15 +168,15 @@ add_post_action('__admin_login',function(){
 		return $GLOBALS['__temporary-errors'] = $errors;
 
 	//If everything went fine save the user session.
+	session_start();
+	unset($result['pwdUsers']);
+	$_SESSION[ADMIN_SESSION_NAME]['current_user'] = $result;
 
-	echo "<pre>";
-		print_r($result);
-	echo "</pre>";
-
-
+	header("Location: ../admin/?page=dashboard");
 });
 
-
-
+// session_start();
+// session_unset();
+// session_destroy();
 
 

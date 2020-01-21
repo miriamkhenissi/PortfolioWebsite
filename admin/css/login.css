@@ -24,6 +24,10 @@
   margin: 4% auto;
 }
 
+.inner-access-container footer {
+    margin-top: 100px;
+}
+
 .field {
   font-size: 18px;
   font-weight: bold;

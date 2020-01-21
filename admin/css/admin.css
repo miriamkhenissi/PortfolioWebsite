@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css?family=Tinos:400,700&display=swap');
+.admin-wrapper {
+  margin-top: 30px;
+  padding: 0 15px;
+}
+
+.navigation {
+  position: relative;
+  max-width: 1240px;
+  margin: auto;
+}
+
+.navigation nav {
+  position: relative;
+}
+
+.navigation .menu-btn {
+  position: absolute;
+  top: 10px;
+  right: 0;
+}
+
+.navigation .menu-btn button {
+  font-family: 'Tinos', serif;
+  font-size: 36px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: 0;
+}
+
+.admin-container {
+  max-width: 1180px;
+  min-height: 85vh;
+  margin: auto;
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.page-notfound {
+  text-align: center;
+  font-size: 22px;
+}
+
+.page-notfound h1 {
+  font-family: 'Tinos', serif;
+  font-size: 14em;
+  font-weight: bold;
+  line-height: 1.1;
+}
+
+.page-notfound p {
+  font-family: 'Tinos', serif;
+  font-size: 4em;
+  font-weight: bold;
+}
