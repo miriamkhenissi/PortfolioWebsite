@@ -124,10 +124,9 @@ function add_post_action($name, $callback){
 
 
 
-
-
 add_post_action('__admin_login',function(){
 
+	//Check if a username and a password been provided.
 	$username = false;
 	$password = false;
 	$errors = [];
@@ -144,9 +143,30 @@ add_post_action('__admin_login',function(){
 		array_push($errors, 'Error username or password');
 
 	if($errors)
-		$GLOBALS['__temporary-errors'] = $errors;
+		return $GLOBALS['__temporary-errors'] = $errors;
 
-	
+	//If no error at all process to check if the user exists.
+	global $conn;
+	$sql = "SELECT * FROM users WHERE uidUsers = '$username' OR emailUsers = '$username' ";
+	$query = mysqli_query($conn, $sql);
+	$result = mysqli_fetch_assoc($query);
+
+	//If the result is empty then ther is no user.
+	if(empty($result))
+		array_push($errors, "Email or username doesn't exist.");
+
+	//Check if the password matches
+	if(!password_verify($password,$result['pwdUsers'])) 
+		array_push($errors, "Error username or password.");	
+
+	if($errors)
+		return $GLOBALS['__temporary-errors'] = $errors;
+
+	//If everything went fine save the user session.
+
+	echo "<pre>";
+		print_r($result);
+	echo "</pre>";
 
 
 });
