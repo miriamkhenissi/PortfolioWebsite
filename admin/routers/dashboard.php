@@ -34,7 +34,7 @@ $pages = ceil($total/$limit);
 
 
 //Create next and previous pagination link.
-$previous_pagination_url = $selectedOffset == 0 ? '#' : add_url_var(get_current_url(),'offset',($selectedOffset));
+$prev_pagination_url = $selectedOffset == 0 ? '#' : add_url_var(get_current_url(),'offset',($selectedOffset));
 $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_current_url(),'offset',(($selectedOffset+1)+1));
 
 ?>
@@ -100,8 +100,8 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 						<?php 
 							echo sprintf(
 								'<a class="page-link%s" %s aria-label="Next">',
-								$previous_pagination_url == '#' ? ' disabled' : '',
-								$previous_pagination_url !== '#' ? ' href="'.$previous_pagination_url.'"' : '',
+								$prev_pagination_url == '#' ? ' disabled' : '',
+								$prev_pagination_url !== '#' ? ' href="'.$prev_pagination_url.'"' : '',
 							);
 						?>						
 							<span aria-hidden="true">&laquo;</span>
