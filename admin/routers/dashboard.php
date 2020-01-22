@@ -5,7 +5,7 @@
  * @author Miriam Habiba Khenissi
  */
 
-$limit = 20;
+$limit = 10;
 $selectedOffset = isset($_GET['offset']) && !empty($_GET['offset']) ? (intval($_GET['offset']) - 1) : 0;
 $offset = $selectedOffset * $limit;
 
@@ -30,7 +30,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 $sql = "SELECT COUNT(idGallery) AS count FROM gallery";
 $query = mysqli_query($conn, $sql);
 $total = mysqli_fetch_assoc($query)['count'];
-$pages = round($total/$limit);
+$pages = ceil($total/$limit);
 
 
 //Create next and previous pagination link.
@@ -92,7 +92,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 			</tfoot>
 		</table>
 
-		<?php if($total > 20) { ?>
+		<?php if($total > $limit) { ?>
 		<nav class="pagination-wrap">
 			<center>
 				<ul class="pagination">
