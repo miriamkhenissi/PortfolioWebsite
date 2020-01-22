@@ -198,6 +198,41 @@ add_post_action('__admin_login',function(){
 	header("Location: ../admin/?page=dashboard");
 });
 
+
+add_post_action('_removepostaction',function(){
+
+	global $conn;
+
+	header('Access-Control-Allow-Origin: *');
+	header("Content-type: application/json; charset=utf-8");
+
+	//This only for admin.
+	if(!is_admin_loggedin()) die(json_encode(['status'=> false, 'error'=> 'Something went wrong please try again later.']));
+
+	//If this is an admin then process the request.
+	$postID = isset($_POST['postID']) && !empty($_POST['postID']) ? intval($_POST['postID']) : false;
+
+
+	//Delete post from gallery database.
+	$sql = "DELETE FROM gallery WHERE idGallery = $postID ";
+	$query = mysqli_query($conn, $sql);
+
+	$response = [
+		'status' => $query,
+		'post_id' => $postID,
+	];
+
+	//Delete all meta data related to this post.
+	$sql = "DELETE FROM meta WHERE picture_id = $postID ";
+	$query = mysqli_query($conn, $sql);	
+
+	die(json_encode($response));//Kill everything after
+
+});
+
+
+
+
 // // session_start();
 // // session_unset();
 // // session_destroy();

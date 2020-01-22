@@ -78,7 +78,7 @@
 
 .main-menu.active {
   opacity: 1;
-  visibility: visible !import;
+  visibility: visible !important;
   transform: translateX(0);
 }
 
