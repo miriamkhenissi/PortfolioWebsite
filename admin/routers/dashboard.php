@@ -52,7 +52,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 					<th scope="col">Name</th>
 					<th style="width: 54%" scope="col">Title</th>
 					<th scope="col">Visibility</th>
-					<th scope="col" class="text-right">Action</th>
+					<th style="width: 15%;" scope="col" class="text-right">Action</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -114,7 +114,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 					<th scope="col">Name</th>
 					<th style="width: 54%" scope="col">Title</th>
 					<th scope="col">Visibility</th>
-					<th scope="col" class="text-right">Action</th>
+					<th style="width: 15%;" scope="col" class="text-right">Action</th>
 				</tr>
 			</tfoot>
 		</table>
