@@ -30,6 +30,12 @@
   border: 0;
 }
 
+@media all and (max-width: 787px) {
+  .navigation .menu-btn button {
+    font-size: 26px;
+  }
+}
+
 .admin-container {
   max-width: 1180px;
   min-height: 85vh;
@@ -54,4 +60,105 @@
   font-family: 'Tinos', serif;
   font-size: 4em;
   font-weight: bold;
+}
+
+.main-menu {
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  transition: .4s ease-in-out;
+  transform: translateX(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.main-menu.active {
+  opacity: 1;
+  visibility: visible !import;
+  transform: translateX(0);
+}
+
+.main-menu .main-menu-container {
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 15px;
+  position: relative;
+  max-width: 1240px;
+}
+
+.main-menu-head {
+  overflow: hidden;
+}
+
+.main-menu-head .logo {
+  float: left;
+}
+
+.main-menu-head .close-menu {
+  float: right;
+}
+
+.main-menu-head .close-menu button {
+  background: transparent;
+  border: 0;
+  padding: 0;
+  margin: 0;
+  width: 30px;
+  cursor: pointer;
+}
+
+.main-menu-head .close-menu button svg {
+  width: 100%;
+  fill: white;
+}
+
+.main-menu ul {
+  font-family: 'Tinos', serif;
+  font-size: 36px;
+  list-style: none;
+  margin: 60px 0 0;
+  padding: 0;
+}
+
+.main-menu ul li a {
+  color: white;
+}
+
+@media all and (max-width: 787px) {
+  .main-menu ul {
+    font-size: 26px;
+  }
+}
+
+.page-container .header .page-title {
+  margin-bottom: 60px;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.page-container .table-content .actions {
+  color: #c5c5c5;
+}
+
+.page-container .pagination-wrap {
+  margin: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-container .pagination-wrap .page-item .page-link {
+  color: white;
+  background: black;
+  border-color: #3a3a3a;
+}
+
+.page-container .pagination-wrap .page-item.active .page-link {
+  background: #ffffff;
+  color: black;
 }

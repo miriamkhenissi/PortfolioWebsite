@@ -117,6 +117,28 @@ function delete_meta($id,$key) {
 	
 }
 
+function get_current_url(){
+	return $currenturl = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];	
+}
+
+
+function add_url_var($url, $key, $value) {	
+	$url = preg_replace('/(.*)(?|&)'. $key .'=[^&]+?(&)(.*)/i', '$1$2$4', $url .'&');
+	$url = substr($url, 0, -1);
+	
+	if (strpos($url, '?') === false) {
+		return ($url .'?'. $key .'='. $value);
+	} else {
+		return ($url .'&'. $key .'='. $value);
+	}
+}
+
+function remove_url_var($url, $key) {
+	$url = preg_replace('/(.*)(?|&)'. $key .'=[^&]+?(&)(.*)/i', '$1$2$4', $url .'&');
+	$url = substr($url, 0, -1);
+	return ($url);
+}
+
 function is_admin_loggedin(){
 	session_start();
 	return isset($_SESSION[ADMIN_SESSION_NAME]) && 
@@ -129,6 +151,7 @@ function add_post_action($name, $callback){
 		$callback();
 	}
 }
+
 
 add_post_action('__admin_login',function(){
 
@@ -175,8 +198,8 @@ add_post_action('__admin_login',function(){
 	header("Location: ../admin/?page=dashboard");
 });
 
-// session_start();
-// session_unset();
-// session_destroy();
+// // session_start();
+// // session_unset();
+// // session_destroy();
 
 

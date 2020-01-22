@@ -6,5 +6,5 @@
 		</center>
 	</footer>
 </div> <!-- admin-wrapper -->
-
+<script type="text/javascript" src="./js/scripts.js"></script>
 </body>
