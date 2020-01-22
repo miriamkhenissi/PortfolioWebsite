@@ -57,7 +57,6 @@ if (!mysqli_stmt_prepare($stmt, $sql)) {
             <div class="gallery-upload">
                 <h4>Upload an image</h4>
                 <form action="includes/gallery-upload.inc.php" method="post" enctype="multipart/form-data">
-                    <div class="field"><input type="text" name="filename" placeholder="File name..." /></div>
                     <div class="field"><input type="text" name="filetitle" placeholder="Image title..." /></div>
                     <div class="field"><textarea name="filedesc" placeholder="Image description..."></textarea></div>
                     <div class="visibility-option">

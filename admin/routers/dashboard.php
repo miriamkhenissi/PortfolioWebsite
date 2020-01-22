@@ -74,8 +74,35 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 								<a id="<?= $item['idGallery'] ?>" href="#" role="button" class="remove-btn btn btn-outline-danger btn-sm">Remove</a>
 							</td>
 						</tr>
-						<tr id="<?= $item['idGallery'] ?>" class="edit-form" style="display: none">
-							<td class="edit-form" colspan="5">Edit form here</td>
+						<tr id="edit-form-<?= $item['idGallery'] ?>" class="edit-form" style="display: none">
+							<td class="edit-form" colspan="5">
+								<div>
+									<h5>Edit</h5>
+									<div class="row">
+										<div class="col-12 col-lg-4">
+											<div class="picture" style="background-image:url(<?= SITE_URL; ?>/img/gallery/<?= $item["imgFullNameGallery"]; ?>);"> <?= $item["meta_value"] == '1' ? '<div class="lock"></div>' : '' ?> </div>											
+										</div>
+										<div class="col-12 col-lg-8">
+											<form action="#" method="POST">
+												<div class="field">
+													<label for="post-title">Title</label>
+													<input id="post-title" type="text" placeholder="Title" name="post-title" value="<?= $item['titleGallery']; ?>" />
+												</div>
+												<div class="field">
+													<label for="post-description">Description</label>
+													<textarea id="post-description" type="text" placeholder="Description" name="post-description"><?= $item['descGallery']; ?></textarea>
+												</div>
+												<div>
+													<button type="submit" class="btn btn-success">Update</button>
+													<span style="opacity: .2"> | </span>
+													<a href="<?= $item['idGallery'] ?>" class="btn btn-outline-secondary close-edit-form" role="button" aria-disabled="true">Cancel</a>
+												</div>
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</td>
 						</tr>
 					<?php } ?>
 

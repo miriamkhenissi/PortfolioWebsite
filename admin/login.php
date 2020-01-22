@@ -14,6 +14,7 @@ require_once('../includes/dbh.inc.php');
 <head>
 	<title>Maya | Login</title>
 	<link rel="stylesheet" type="text/css" href="css/login.css">
+	<link rel="stylesheet" type="text/css" href="css/admin.css">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>

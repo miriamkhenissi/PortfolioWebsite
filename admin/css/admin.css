@@ -1,4 +1,48 @@
 @import url('https://fonts.googleapis.com/css?family=Tinos:400,700&display=swap');
+.field {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.field label {
+  color: black;
+  display: block;
+}
+
+.field textarea,
+.field input[type="text"],
+.field input[type="password"],
+.field input[type="email"] {
+  width: 100%;
+  max-width: 400px;
+  height: 50px;
+  border: 1px solid black;
+  border-radius: 4px;
+  background: white;
+  color: black;
+  padding: 0 15px;
+}
+
+.field.inverse label {
+  color: white;
+}
+
+.field.inverse textarea,
+.field.inverse input[type="text"],
+.field.inverse input[type="password"],
+.field.inverse input[type="email"] {
+  background: black;
+  color: white;
+  border-color: #ababab;
+}
+
+.field textarea {
+  padding: 15px;
+  height:auto;
+  resize: none;
+}
+
 .admin-wrapper {
   margin-top: 30px;
   padding: 0 15px;
@@ -139,6 +183,22 @@
   margin-bottom: 60px;
   font-size: 32px;
   font-weight: bold;
+}
+
+.page-container .table-content .edit-form.active {
+  display: table-row !important;
+}
+
+.page-container .table-content .edit-form .picture {
+    background-position: center;
+    background-size: contain;
+    background-color: black;
+    background-repeat: no-repeat;
+    padding-bottom: 50%;
+}
+
+.page-container .table-content .edit-form form {
+  margin-bottom: 50px;
 }
 
 .page-container .table-content .actions {

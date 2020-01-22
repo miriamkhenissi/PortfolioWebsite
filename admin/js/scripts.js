@@ -43,13 +43,34 @@ if(document.getElementById("close-main-menu")){
 }
 
 
+document.querySelectorAll('.dashboard-page .edit-btn').forEach( element => {
+	element.addEventListener('click', elem => {
+		elem.preventDefault();
+		const id = elem.target.getAttribute('id');
+		//Remove any other active class from anyother edit-form
+		document.querySelectorAll('.dashboard-page .table-content .edit-form').forEach( row => row.classList.remove('active'))
+		document.getElementById(`edit-form-${id}`).classList.add('active');
+	});
+});
+
+
+document.querySelectorAll('.dashboard-page .close-edit-form').forEach( element => {
+	element.addEventListener('click', elem => {
+		elem.preventDefault();
+		const id = elem.target.getAttribute('href');
+		//Remove any other active class from anyother edit-form
+		document.getElementById(`edit-form-${id}`).classList.remove('active');
+	});
+});
+
+
 document.querySelectorAll('.dashboard-page .remove-btn').forEach( element => {
 	element.addEventListener('click', elem => {
 		elem.preventDefault();
 		if(confirm("Are you sure you want to remove this post?")){
 			const postId = elem.target.getAttribute('id');
 			elem.target.parentElement.parentElement.remove();
-
+			document.getElementById(`edit-form-${postId}`).remove();
 
 			const XMLHTTP = new XMLHttpRequest();
 			XMLHTTP.open("POST", AJAXURL);

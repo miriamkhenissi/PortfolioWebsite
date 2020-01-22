@@ -28,42 +28,6 @@
     margin-top: 100px;
 }
 
-.field {
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 25px;
-}
-
-.field label {
-  color: black;
-  display: block;
-}
-
-.field input[type="text"],
-.field input[type="password"],
-.field input[type="email"] {
-  width: 100%;
-  max-width: 400px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 4px;
-  background: white;
-  color: black;
-  padding: 0 15px;
-}
-
-.field.inverse label {
-  color: white;
-}
-
-.field.inverse input[type="text"],
-.field.inverse input[type="password"],
-.field.inverse input[type="email"] {
-  background: black;
-  color: white;
-  border-color: #ababab;
-}
-
 .access-container button {
   width: 100%;
   max-width: 200px;
