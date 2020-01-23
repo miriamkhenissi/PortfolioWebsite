@@ -214,20 +214,20 @@ add_post_action('_removepostaction',function(){
 	$postID = isset($_POST['postID']) && !empty($_POST['postID']) ? intval($_POST['postID']) : false;
 
 
-	// //Delete post from gallery database.
-	// $sql = "DELETE FROM gallery WHERE idGallery = $postID ";
-	// $query = mysqli_query($conn, $sql);
+	//Delete post from gallery database.
+	$sql = "DELETE FROM gallery WHERE idGallery = $postID ";
+	$query = mysqli_query($conn, $sql);
 
-	// $response = [
-	// 	'status' => $query,
-	// 	'post_id' => $postID,
-	// ];
+	$response = [
+		'status' => $query,
+		'post_id' => $postID,
+	];
 
-	// //Delete all meta data related to this post.
-	// $sql = "DELETE FROM meta WHERE picture_id = $postID ";
-	// $query = mysqli_query($conn, $sql);	
+	//Delete all meta data related to this post.
+	$sql = "DELETE FROM meta WHERE picture_id = $postID ";
+	$query = mysqli_query($conn, $sql);	
 
-	// die(json_encode($response));//Kill everything after
+	die(json_encode($response));//Kill everything after
 
 });
 
