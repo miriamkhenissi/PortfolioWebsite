@@ -142,10 +142,18 @@ function remove_url_var($url, $key) {
 }
 
 function is_admin_loggedin(){
-	session_start();
+
+	if(!isset($_SESSION)) session_start();
+
 	return isset($_SESSION[ADMIN_SESSION_NAME]) && 
 		   isset($_SESSION[ADMIN_SESSION_NAME]['current_user']) &&
 		   !empty($_SESSION[ADMIN_SESSION_NAME]['current_user']) ? true : false;
+}
+
+function admin_logout(){
+	session_start();
+	unset($_SESSION[ADMIN_SESSION_NAME]);
+	return true;
 }
 
 function add_post_action($name, $callback){
@@ -311,11 +319,3 @@ add_post_action('_updatePost',function(){
 	}
 
 });
-
-
-
-// // session_start();
-// // session_unset();
-// // session_destroy();
-
-
