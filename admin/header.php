@@ -49,8 +49,8 @@
 							</div>
 
 							<ul>
-								<li><a href="#">Dashboard</a></li>
-								<li><a href="#">Users</a></li>
+								<li><a href="<?= ADMIN_SITE_URL ?>?page=dashboard">Dashboard</a></li>
+								<li><a href="<?= ADMIN_SITE_URL ?>?page=users">Users</a></li>
 							</ul>
 						</div>
 					</div>

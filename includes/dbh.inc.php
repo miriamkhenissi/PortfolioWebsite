@@ -3,6 +3,7 @@
 //DEFINE ADMIN SESSION KEYS
 define('ADMIN_SESSION_NAME', '__admin-session');
 define('SITE_URL', 'http://localhost:8888/PortfolioWebsite/');
+define('ADMIN_SITE_URL', 'http://localhost:8888/PortfolioWebsite/admin/');
 
 
 //database info
