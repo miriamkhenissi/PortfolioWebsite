@@ -114,6 +114,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 												<span style="opacity: .2"> | </span>
 												<a href="<?= $item['idGallery'] ?>" class="btn btn-outline-secondary close-edit-form" role="button" aria-disabled="true">Cancel</a>
 												<span class="update-spinned"><div class="spinner-border spinner-border-sm" role="status"> <span class="sr-only">Loading...</span> </div></span>
+												<span class="update-success badge badge-success">Post successfully updated.</a>
 											</div>
 										</div>
 									</div>

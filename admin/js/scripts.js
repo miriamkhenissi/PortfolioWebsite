@@ -202,6 +202,10 @@ document.querySelectorAll('.edit-form-row form').forEach( element => {
 
 						//Stop the spinned.
 						selectedElement.target.parentElement.querySelector('.update-spinned').classList.remove('visible');
+						selectedElement.target.parentElement.querySelector('.update-success').classList.add('visible');
+						setTimeout(()=> {
+							selectedElement.target.parentElement.querySelector('.update-success').classList.remove('visible');
+						},6000);
 					}catch(e) {
 						console.warn(e);
 					}
@@ -212,18 +216,6 @@ document.querySelectorAll('.edit-form-row form').forEach( element => {
 
 	})
 });
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

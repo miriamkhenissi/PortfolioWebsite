@@ -38,8 +38,8 @@ if (isset($_POST['login-submit']) )
                 {
                     // create a session
                     session_start();
-                    $_SESSION['userId']=$row['idUsers'];
-                    $_SESSION['userUid']=$row['uidUsers'];
+                    $_SESSION['userId'] = $row['idUsers'];
+                    $_SESSION['userUid'] = $row['uidUsers'];
                     header("Location: ../user.php?success");
                     exit();
                 }

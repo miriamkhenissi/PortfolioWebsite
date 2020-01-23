@@ -220,12 +220,18 @@
   display: block;
 }
 
-.page-container .table-content .edit-form .update-spinned {
+.page-container .table-content .edit-form .update-success {
+  margin-right: 10px;
+}
+
+.page-container .table-content .edit-form .update-spinned,
+.page-container .table-content .edit-form .update-success  {
   margin-left:10px;
   display: none;
 }
 
-.page-container .table-content .edit-form .update-spinned.visible {
+.page-container .table-content .edit-form .update-spinned.visible,
+.page-container .table-content .edit-form .update-success.visible  {
   display: initial;
 }
 
