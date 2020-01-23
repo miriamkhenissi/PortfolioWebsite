@@ -1,4 +1,8 @@
 <?php
+/**
+ * @version 1.0.0
+ * @author Miriam Habiba Khenissi
+ */
 
 //DEFINE ADMIN SESSION KEYS
 define('ADMIN_SESSION_NAME', '__admin-session');

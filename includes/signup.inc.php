@@ -1,97 +1,82 @@
 <?php
-    //Check if user accessed this page after clicking on the "Sign up - submit" button
-    if(isset($_POST["signup-submit"])) 
-    {
-        //connect to database
-        require "dbh.inc.php";
+/**
+ * @version 1.0.0
+ * @author Miriam Habiba Khenissi
+ */
 
-        //Storing the information inputted by the user in variables
-        $username = $_POST['uid'];
-        $email = $_POST['mail'];
-        $password = $_POST['pwd'];
-        $password_repeat = $_POST['pwd-repeat'];
+require "dbh.inc.php";
+    
 
-        //error handling
-            //checking if any of the fields are empty
-            if(empty($username) || empty($email) || empty($password) || empty($password_repeat))
-            {
-                //url will display entered information except passwords
-                header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
-                exit(); //the rest of the code won't execute
-            }
+add_post_action('signup-submit',function(){
+    global $conn;
 
-            elseif(!filter_var($email, FILTER_VALIDATE_EMAIL) && !preg_match("/^[a-zA-Z0-9]*$/", $username)) //if BOTH email and username do not match requirements
-            {
-                header("Location: ../signup.php?error=invalidmail&uid");
-                exit();
-            }
-
-            elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) //filter which verifies validity of an email
-            {
-                header("Location: ../signup.php?error=invalidmail&uid=".$username);
-                exit();
-            }
-
-            elseif(!preg_match("/^[a-zA-Z0-9]*$/", $username )) //filter which checks if username is all valid characters
-            {
-                header("Location: ../signup.php?error=invaliduid&mail=".$email);
-                exit();
-            }
-
-            elseif($password !== $password_repeat) //check if passwords do match
-            {
-                header("Location: ../signup.php?error=passwordsnotmatching&uid=".$username."&mail=".$email);
-                exit();
-            }
-
-            else
-            {
-                //checking if the username already exists
-                $sql = "SELECT uidUsers FROM users WHERE uidUsers=?";
-                $stmt = mysqli_stmt_init($conn);
-                if(!mysqli_stmt_prepare($stmt, $sql))   //check if connection path is valid
-                {
-                    header("Location: ../signup.php?error=sqlerror");
-                    exit();
-                } 
-                else
-                {
-                    mysqli_stmt_bind_param($stmt,"s", $username);  //take information from user and send to database, which information is it and what kind of data type is it
-                    mysqli_stmt_execute($stmt); //actually running the information inside the database
-                    mysqli_stmt_store_result($stmt);
-                    $resultCheck = mysqli_stmt_num_rows($stmt);
-                    if ( $resultCheck > 0)
-                    {
-                        header("Location: ../signup.php?error=usertaken&mail=".$email);
-                        exit();    
-                    }
-                    else //we have now checked all possible errors and it's time to actually store the correct info in the database
-                    {
-                        $sql = "INSERT INTO users (uidUsers,	emailUsers,	pwdUsers) VALUES (?, ?, ?) ";
-                        $stmt = mysqli_stmt_init($conn);
-                        if(!mysqli_stmt_prepare($stmt, $sql))   //check if connection path is valid
-                        {
-                            header("Location: ../signup.php?error=sqlerror");
-                            exit();
-                        } 
-                        else
-                        {
-                            $hashedPwd = password_hash($password, PASSWORD_DEFAULT); //encrypt password
-                    
-                            mysqli_stmt_bind_param($stmt,"sss", $username,	$email,	$hashedPwd);  //we have to USE THE HASHED PASSWORD
-                            mysqli_stmt_execute($stmt); 
-                            header("Location: ../signup.php?sign=success"); 
-                            exit();
-                        }
-                    }
-                }
-            }
-            mysqli_stmt_close($stmt);
-            mysqli_close($conn);
-    }
-    else //if username did not access page from correct link redirect them to the signup page
-    {
-        header("Location: ../signup.php");
+    //Check if the user submitted all the requested data.
+    if(empty($_POST['uid']) || empty($_POST['mail']) || empty($_POST['pwd']) || empty($_POST['pwd-repeat'])) {
+        header("Location: ../signup.php?error=emptyfields&uid=".$username."&mail=".$email);
         exit();
     }
+
+    $username =         $_POST['uid'];
+    $email =            $_POST['mail'];
+    $password =         $_POST['pwd'];
+    $password_repeat =  $_POST['pwd-repeat'];    
+
+    //If the username length is less than 4 then break.
+    if(strlen($username) < 4){
+        header("Location: ../signup.php?error=invaliduid&uid");
+        exit();
+    }
+
+    //Validate the email address.
+    if(!filter_var($email, FILTER_VALIDATE_EMAIL)){
+        header("Location: ../signup.php?error=invalidmail&uid");
+        exit();
+    }
+
+    if(strlen($password) < 6 || $password !== $password_repeat){
+        header("Location: ../signup.php?error=passwordsnotmatching&uid=".$username."&mail=".$email);
+        exit();
+    }
+
+
+    //Check if username exists at the database...
+    $sql = "SELECT COUNT(*) AS count FROM users WHERE uidUsers =  '$username' ";
+    $query =  mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+
+    if($result['count']){
+        header("Location: ../signup.php?error=usertaken");
+        exit();
+    } 
+
+    //Reset previous variables anf check if email address exists at the database...
+    $sql = "SELECT COUNT(*) AS count FROM users WHERE emailUsers =  '$email' ";
+    $query =  mysqli_query($conn, $sql);
+    $result = mysqli_fetch_assoc($query);
+
+
+    if($result['count']){
+        header("Location: ../signup.php?error=emailtaken");
+        exit();
+    }  
+
+    //If all the conditions are met then insert the user into the database.
+    $password = password_hash($password, PASSWORD_DEFAULT);//Encrypt the password.
+    $sql = "INSERT INTO users (uidUsers, emailUsers, pwdUsers, role) VALUES ('$username', '$email', '$password', NULL) ";
+    $query = mysqli_query($conn, $sql);
+    if(!$query){
+        header("Location: ../signup.php?error=unknown");
+        exit();
+    }
+
+
+    //If all is good then sign in the user and redirect to dashboard
+    // create a session
+    session_start();
+    $_SESSION['userId'] = $conn->insert_id;
+    $_SESSION['userUid'] = $username;
+    header("Location: ../user.php?success");
+    exit();
+
+});
 

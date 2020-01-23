@@ -50,7 +50,6 @@
 
 							<ul>
 								<li><a href="<?= ADMIN_SITE_URL ?>?page=dashboard">Dashboard</a></li>
-								<li><a href="<?= ADMIN_SITE_URL ?>?page=users">Users</a></li>
 								<li><a href="<?= ADMIN_SITE_URL ?>?page=logout">Logout</a></li>
 							</ul>
 						</div>
