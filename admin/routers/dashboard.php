@@ -96,7 +96,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 													<label for="post-visibility">Visibility</label>
 													<select id="post-visibility" name="post-visibility">
 														<option selected disabled>Select visibility</option>
-														<option value="0" <?= $item['meta_value'] == '0' ? 'selected' : '' ?>>Public</option>
+														<option value="0" <?= $item['meta_value'] !== '1' ? 'selected' : '' ?>>Public</option>
 														<option value="1" <?= $item['meta_value'] == '1' ? 'selected' : '' ?>>Private</option>
 													</select>
 												</div>
