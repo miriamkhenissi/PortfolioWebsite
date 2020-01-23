@@ -308,8 +308,6 @@ add_post_action('_updatePost',function(){
 			die(json_encode(['status'=> true, 'filename' => $newFileName]));//Kill everything after
 
 		}
-
-		die(json_encode($_FILES['post-file']));//Kill everything after
 	}
 
 });

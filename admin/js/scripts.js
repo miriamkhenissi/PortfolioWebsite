@@ -181,10 +181,7 @@ document.querySelectorAll('.edit-form-row form').forEach( element => {
 		const selectedElement = elem;
 		selectedElement.target.parentElement.querySelector('.update-spinned').classList.add('visible');
 		const formData = new FormData(element);
-		// console.log(formData);
 		formData.append('_updatePost',1);
-		// for(var key of formData.keys()) console.log(key);
-		// for(var value of formData.values()) console.log(value);
 
 			const XMLHTTP = new XMLHttpRequest();
 			XMLHTTP.open("POST", AJAXURL);
@@ -198,7 +195,7 @@ document.querySelectorAll('.edit-form-row form').forEach( element => {
 						if(!response.status){
 							alert(response.error)
 						}
-						console.log(response);
+
 						if(response.filename !== undefined && response.filename) {//The media file been updated then update the post-image field.
 							selectedElement.target.parentElement.parentElement.querySelector('.post-image').value = response.filename;
 						}

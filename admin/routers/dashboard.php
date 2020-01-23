@@ -65,7 +65,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 					<?php foreach ($list as $item) { ?>
 						<tr>
 							<th><?= $item['idGallery'] ?></th>
-							<td><?= $item['imgFullNameGallery'] ?></td>
+							<td><small><?= $item['imgFullNameGallery'] ?></small></td>
 							<td><?= $item['titleGallery'] ?></td>
 							<td><?= $item['meta_value'] == 0 ? 'Public' : 'Private' ?></td>
 							<td class="actions text-right">
