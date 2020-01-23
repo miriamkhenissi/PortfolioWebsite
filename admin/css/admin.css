@@ -41,7 +41,7 @@
 
 .field textarea {
   padding: 15px;
-  height:auto;
+  height: auto;
   resize: none;
 }
 
@@ -192,11 +192,41 @@
 }
 
 .page-container .table-content .edit-form .picture {
-    background-position: center;
-    background-size: contain;
-    background-color: black;
-    background-repeat: no-repeat;
-    padding-bottom: 50%;
+  position: relative;
+  background-position: center;
+  background-size: contain;
+  background-color: black;
+  background-repeat: no-repeat;
+  padding-bottom: 50%;
+}
+
+.page-container .table-content .edit-form .picture .remove-picture button {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+.page-container .table-content .edit-form .picture .remove-picture button svg {
+  width: 10px;
+  margin-right: 10px
+}
+
+.page-container .table-content .edit-form .upload-image {
+  margin-top: 20px;
+  display: none;
+}
+
+.page-container .table-content .edit-form .upload-image.active {
+  display: block;
+}
+
+.page-container .table-content .edit-form .update-spinned {
+  margin-left:10px;
+  display: none;
+}
+
+.page-container .table-content .edit-form .update-spinned.visible {
+  display: initial;
 }
 
 .page-container .table-content .edit-form form {

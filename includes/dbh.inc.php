@@ -233,6 +233,87 @@ add_post_action('_removepostaction',function(){
 });
 
 
+add_post_action('_updatePost',function(){
+	global $conn;
+
+	header('Access-Control-Allow-Origin: *');
+	header("Content-type: application/json; charset=utf-8");
+
+	//This only for admin.
+	if(!is_admin_loggedin()) die(json_encode(['status'=> false, 'error'=> 'Something went wrong please try again later.']));
+
+
+	//Check if every field been submitted
+	$postID = isset($_POST['post-id']) && !empty($_POST['post-id']) ? $_POST['post-id'] : false;//This is the most important data key at this process without post ID the script won't be able to identify the post.
+
+	if(!$postID) die(json_encode(['status'=> false, 'error'=> 'Something went wrong please try again later.']));
+
+	//If all fine proceed with the rest of the fields.
+	$postTitle = isset($_POST['post-title']) && !empty($_POST['post-title']) ? $_POST['post-title'] : false;
+	$postDesc = isset($_POST['post-description']) && !empty($_POST['post-description']) ? $_POST['post-description'] : false;
+	$postVisibility = isset($_POST['post-visibility']) && !empty($_POST['post-visibility']) ? intval($_POST['post-visibility']) : 0;
+
+	//Update post title description and visibility....
+	$sql = "UPDATE `gallery` SET `titleGallery` = '$postTitle', `descGallery` = '$postDesc'  WHERE `idGallery` = $postID ";
+	$query = mysqli_query($conn, $sql);
+
+	//Update the post meta...
+	update_meta($postID,'visibility',$postVisibility);
+	sleep(3); //simulate a real usage scenario (low data provider)
+
+	//Check if the post have changes related to the picture...
+	//If the value of post-image is empty it means there is a possible change to the image file...
+	if(isset($_POST['post-image']) && !empty($_POST['post-image'])){
+		die(json_encode(['status'=> true]));//Kill everything after
+	}else {//This means the admin removed the current image and maybe uploaded an image to replace the current one with...
+
+		//If there is no file at all submitted then completely ignore the request and 
+		//concider it as a mistake from the admin, Keep the image as is...
+		if(!isset($_FILES['post-file']['tmp_name']) || empty($_FILES['post-file']['tmp_name'])) die(json_encode(['status'=> true]));//Kill everything after
+
+		//Check if there is a file...
+		if(isset($_FILES['post-file'])) {//If there is a field called post-filed then admin have filled the image field...
+			//Check if enough data been provided such as type, size....
+			$name =  isset($_FILES['post-file']['name']) ? $_FILES['post-file']['name'] : false;
+			$type =  isset($_FILES['post-file']['type']) ? $_FILES['post-file']['type'] : false;
+			$location = isset($_FILES['post-file']['tmp_name']) ? $_FILES['post-file']['tmp_name'] : false;
+			$size = isset($_FILES['post-file']['size']) ? $_FILES['post-file']['size'] : false;
+
+
+			$allowedTypes = ['image/jpeg','image/jpg','image/png'];
+
+			//If the type isn't allowed then kill the script.
+			if(!in_array($type, $allowedTypes)) die(json_encode(['status'=> false, 'error' => 'Unsupported file format...', 'file' => $_FILES]));
+			//If there is no file location then kill the script.
+			if(!$location) die(json_encode(['status'=> false, 'error' => 'Something is wrong with the provided file...']));
+			//If some how the file doesn't have a name... rare case...
+			if(!$name) die(json_encode(['status'=> false, 'error' => 'Something is wrong with the provided file...']));
+			//If the size is above the limit then kill the script.
+			if($size > 2000000) die(json_encode(['status'=> false, 'error' => 'Only 2MB file size is allowed.']));
+
+			//If all conditions been met then process with moving the file and giving it a name.
+			$extensionName = strtolower(pathinfo("$name", PATHINFO_EXTENSION)); //Never user the predefined function explode to separate the dot from the name somefiles can be tricky so use the PHP path info instead...
+			$newFileName = join('.',[uniqid().'-'.uniqid().'-'.uniqid(),$extensionName]); // this will contain a long file name and infinitly unique...
+
+			$fileDestination = "../img/gallery/" . $newFileName;
+
+			sleep(3); //simulate a real usage scenario (low data provider)
+
+			if(!move_uploaded_file($location, $fileDestination)) die(json_encode(['status'=> false, 'error' => 'Something is wrong with the provided file...']));
+
+			//If the file moved and all is fine then update column image at the table row...
+			$sql = "UPDATE `gallery` SET `imgFullNameGallery` = '$newFileName'  WHERE `idGallery` = $postID ";
+			$query = mysqli_query($conn, $sql);
+
+			die(json_encode(['status'=> true, 'filename' => $newFileName]));//Kill everything after
+
+		}
+
+		die(json_encode($_FILES['post-file']));//Kill everything after
+	}
+
+});
+
 
 
 // // session_start();

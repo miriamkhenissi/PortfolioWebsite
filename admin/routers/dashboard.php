@@ -75,40 +75,49 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 							</td>
 						</tr>
 						<tr id="edit-form-<?= $item['idGallery'] ?>" class="edit-form" style="display: none">
-							<td class="edit-form" colspan="5">
+							<td class="edit-form-row" colspan="5">
 								<div>
+									<form action="#" method="POST">
 									<h5>Edit</h5>
 									<div class="row">
+										<input class="post-id" type="hidden" name="post-id" value="<?= $item['idGallery'] ?>" />
+										<input class="post-image" type="hidden" name="post-image" value="<?= $item['imgFullNameGallery'] ?>" />
 										<div class="col-12 col-lg-4">
-											<div class="picture" style="background-image:url(<?= SITE_URL; ?>/img/gallery/<?= $item["imgFullNameGallery"]; ?>);"> <?= $item["meta_value"] == '1' ? '<div class="lock"></div>' : '' ?> </div>											
+											<div class="picture" style="background-image:url(<?= SITE_URL; ?>/img/gallery/<?= $item["imgFullNameGallery"]; ?>);"> <?= $item["meta_value"] == '1' ? '<div class="lock"></div>' : '' ?>
+												<div class="remove-picture">
+													<button type="button" class="btn btn-danger btn-sm"><svg fill="#FFF" viewBox="0 0 8 8"><path d="M1.406 0l-1.406 1.406.688.719 1.781 1.781-1.781 1.781-.688.719 1.406 1.406.719-.688 1.781-1.781 1.781 1.781.719.688 1.406-1.406-.688-.719-1.781-1.781 1.781-1.781.688-.719-1.406-1.406-.719.688-1.781 1.781-1.781-1.781-.719-.688z"></path></svg>Remove</button>
+												</div>
+											</div>
+											<div class="upload-image">
+												<input type="file" name="post-file">
+											</div>											
 										</div>
 										<div class="col-12 col-lg-8">
-											<form action="#" method="POST">
-												<div class="field">
-													<label for="post-title">Title</label>
-													<input id="post-title" type="text" placeholder="Title" name="post-title" value="<?= $item['titleGallery']; ?>" />
-												</div>
-												<div class="field">
-													<label for="post-description">Description</label>
-													<textarea id="post-description" type="text" placeholder="Description" name="post-description"><?= $item['descGallery']; ?></textarea>
-												</div>
-												<div class="field">
-													<label for="post-visibility">Visibility</label>
-													<select id="post-visibility" name="post-visibility">
-														<option selected disabled>Select visibility</option>
-														<option value="0" <?= $item['meta_value'] !== '1' ? 'selected' : '' ?>>Public</option>
-														<option value="1" <?= $item['meta_value'] == '1' ? 'selected' : '' ?>>Private</option>
-													</select>
-												</div>
-												<div>
-													<button type="submit" class="btn btn-success">Update</button>
-													<span style="opacity: .2"> | </span>
-													<a href="<?= $item['idGallery'] ?>" class="btn btn-outline-secondary close-edit-form" role="button" aria-disabled="true">Cancel</a>
-												</div>
-											</form>
+											<div class="field">
+												<label>Title</label>
+												<input type="text" placeholder="Title" name="post-title" value="<?= $item['titleGallery']; ?>" />
+											</div>
+											<div class="field">
+												<label>Description</label>
+												<textarea type="text" placeholder="Description" name="post-description"><?= $item['descGallery']; ?></textarea>
+											</div>
+											<div class="field">
+												<label>Visibility</label>
+												<select name="post-visibility">
+													<option selected disabled>Select visibility</option>
+													<option value="0" <?= $item['meta_value'] !== '1' ? 'selected' : '' ?>>Public</option>
+													<option value="1" <?= $item['meta_value'] == '1' ? 'selected' : '' ?>>Private</option>
+												</select>
+											</div>
+											<div>
+												<button type="submit" class="btn btn-success">Update</button>
+												<span style="opacity: .2"> | </span>
+												<a href="<?= $item['idGallery'] ?>" class="btn btn-outline-secondary close-edit-form" role="button" aria-disabled="true">Cancel</a>
+												<span class="update-spinned"><div class="spinner-border spinner-border-sm" role="status"> <span class="sr-only">Loading...</span> </div></span>
+											</div>
 										</div>
-
 									</div>
+									</form>									
 								</div>
 							</td>
 						</tr>
