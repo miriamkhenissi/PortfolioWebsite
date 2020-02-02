@@ -146,9 +146,9 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 							echo sprintf(
 								'<a class="page-link%s" %s aria-label="Next">',
 								$prev_pagination_url == '#' ? ' disabled' : '',
-								$prev_pagination_url !== '#' ? ' href="'.$prev_pagination_url.'"' : '',
+								$prev_pagination_url !== '#' ? ' href="'.$prev_pagination_url.'"' : ''
 							);
-						?>						
+						?>
 							<span aria-hidden="true">&laquo;</span>
 							<span class="sr-only">Previous</span>
 						</a>
@@ -164,7 +164,7 @@ $next_pagination_url = ($selectedOffset+1) >= $pages ? '#' : add_url_var(get_cur
 							echo sprintf(
 								'<a class="page-link%s" %s aria-label="Next">',
 								$next_pagination_url == '#' ? ' disabled' : '',
-								$next_pagination_url !== '#' ? ' href="'.$next_pagination_url.'"' : '',
+								$next_pagination_url !== '#' ? ' href="'.$next_pagination_url.'"' : ''
 							);
 						?>
 						
