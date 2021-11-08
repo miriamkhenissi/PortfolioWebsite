@@ -8,7 +8,7 @@
                 <img src="img/envelope.svg" alt="envelope_contact"/>
             </div>
             <form action="contactform.php" method="post">
-                <h3>Drop Us a Message</h3>
+                <h1>Drop me a message</h1>
                <div class="row">
                     <div class="col-md-6">
                         <div class="form-group">
@@ -20,14 +20,16 @@
                         <div class="form-group">
                             <input type="text" name="subject" class="form-control" placeholder="Subject *" value="" />
                         </div>
-                        <div class="form-group">
-                            <input type="submit" name="submit" class="btn-purple" value="Send Message" />
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <div class="form-group">
                             <textarea name="txtMsg" class="form-control" placeholder="Your Message *" style="width: 100%; height: 150px;"></textarea>
                         </div>
+                    </div>
+                </div>
+                <div class="row form-group">
+                    <div class="col-md-6">
+                        <input type="submit" name="submit" class="btn-contact" value="Send Message" />
                     </div>
                 </div>
             </form>

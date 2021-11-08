@@ -6,12 +6,15 @@
 
 //DEFINE ADMIN SESSION KEYS
 define('ADMIN_SESSION_NAME', '__admin-session');
-define('SITE_URL', 'http://localhost:8888/PortfolioWebsite/');
-define('ADMIN_SITE_URL', 'http://localhost:8888/PortfolioWebsite/admin/');
+define('SITE_URL', 'https://mayakh.com/');
+define('ADMIN_SITE_URL', 'https://mayakh.com/admin/');
 
 
 //database info
 $servername = "localhost";
+// $dBUser = "admin";
+// $dBPassword = "Kelibia29.";
+
 $dBUser = "root";
 $dBPassword = "root";
 $dBName = "login-system";
@@ -323,3 +326,7 @@ add_post_action('_updatePost',function(){
 	}
 
 });
+
+
+
+$class_list = []; //This will contain body classlist.

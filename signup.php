@@ -43,7 +43,7 @@
                     <input type = "password" name="pwd-repeat" placeholder="Repeat password">
                 </div>
 
-                <button class="btn-purple" type="submit" name="signup-submit">Signup</button>
+                <button class="btn-contact" type="submit" name="signup-submit">Signup</button>
             </form>
         </div>
     </div>

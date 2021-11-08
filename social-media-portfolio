@@ -1,0 +1,57 @@
+<?php $title = "Social media for real people" ?>
+<?php require("header.php"); ?>
+<body>
+    <div class="container" id="case-study">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <h1>Social media for real people</h1>
+                <p>app intro</p>
+                <div style="width: fit-content;">
+                    <a class="view-more" href="https://www.youk.co">View Project</a>
+                    <div class="underline"></div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <img class="w-100" src="img/chiari-mockup.png">
+            </div>
+            <div class="col-12 col-md-6 mt-5">
+                <img class="w-100" src="img/chiari-mockup.png">
+            </div>
+            <div class="col-6 col-md-3 mt-5">
+                <div class="skills">
+                    <h2>Tech used</h2>
+                    <li>HTML</li>
+                    <li>CSS/SASS</li>
+                    <li>JavaScript</li>
+                </div>
+            </div>
+             <div class="col-6 col-md-3 mt-5">
+                <div class="skills">
+<br/>
+                    <li>Adobe XD</li>
+                    <li>Adobe Illustrator</li>
+                    <li>Adobe Photoshop</li>
+                </div>
+            </div>
+
+            <div class="col-12 col-md-6 mt-5">
+                <h2>Design iterations</h2>
+                <p>explain processes</p>
+            </div>
+            <div class="col-12 col-md-6 mt-5">
+                <img class="w-100" src="img/chiari-mockup.png">
+            </div>
+
+            <div class="col-12 col-md-6 my-5">
+                <video width="320" height="240" autoplay muted>
+                  <source src="img/social-media-app.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>            
+            </div>
+            <div class="col-12 col-md-6 my-5">
+                <h2>Challenges</h2>
+                <p></p>
+            </div>
+        </div>
+    </div>
+<?php require("footer.php"); ?>
