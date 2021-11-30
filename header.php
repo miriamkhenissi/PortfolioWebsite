@@ -23,7 +23,7 @@
     <title><?= isset($title) ? "MAYAKH | $title" : "MAYAKH"; ?></title>
     <link href='main.css' rel='stylesheet' type='text/css' media='screen' />
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="icon" href="img/logo.webp">
+    <link rel="icon" href="img/logo.png">
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" /> -->
     <!-- <link href="https://fonts.googleapis.com/css?family=Montserrat|Rammetto+One&display=swap" rel="stylesheet" /> -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
@@ -55,9 +55,9 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="about.php">About</a>
                         </li>
-                       <li class="nav-item">
+<!--                        <li class="nav-item">
                             <a class="nav-link" href="gallery.php">Portfolio</a>
-                        </li> 
+                        </li>  -->
                         
                     </ul>
 

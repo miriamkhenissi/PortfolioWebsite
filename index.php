@@ -172,20 +172,18 @@
                 <h1 class="title">Guess the Country</h1>
                 <p>Viral Instagram Filter</p>
                 <div>
-                    <a class="view-more" href="https://www.morethanvectors.com/MoreThanVectors/">View Project</a>
+                    <a class="view-more" href="https://www.tiktok.com/@bashtheentertainer/video/6936140196291415302?lang=en&is_copy_url=1&is_from_webapp=v1">View Project</a>
                     <div class="underline"></div>
                 </div>
                 <div class="clearfix"></div>
                 <div class="link">
                     <ul>
-                       <li><a href="#"><i class="fa fa-behance"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram"></i></a></li> 
+                       <li><a href="https://www.edinburghnews.scotsman.com/news/people/edinburgh-student-entertains-millions-online-new-tech-design-skill-she-learned-lockdown-3123089" target="_blank"><i class="fa fa-newspaper-o"></i></a></li>
                     </ul>
                 </div>
             </div>
             <div class="project-image">
-                <img src="img/mtv.jpg" alt="More than vectors: Creative agency website" class="workImg">
+                <img src="img/filter.jpeg" alt="Guess the country: a viral instagram filter game" class="workImg">
             </div>
         </div>
 

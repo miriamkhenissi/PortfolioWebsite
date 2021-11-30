@@ -30,6 +30,8 @@ a:hover {
 }
 
 
+
+
 .nav-icon {
   width: 35px;
   position: relative;
@@ -474,6 +476,10 @@ a.nav-link:hover {
   padding-right: 0px !important;
 }
 
+.section-title{
+  color: var(--secondaryColour);
+}
+
 .sidenav a {
   padding: 0 0 20px;
   text-decoration: none;
@@ -491,7 +497,7 @@ a.nav-link:hover {
 }
 
 .sidenav a:hover {
-  color: #ffffff;
+  color: #ffffff !important;
 }
 
 .sidenav .closebtn {
@@ -1381,4 +1387,11 @@ a.nav-link:hover {
 
 .ethics-title h5{
     font-weight: bold;
+}
+
+
+.sec-text{
+      display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

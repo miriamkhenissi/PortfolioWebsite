@@ -16,7 +16,7 @@
                 <img class="w-100" src="img/chiari-mockup.png">
             </div>
             <div class="col-12 col-md-6 mt-5">
-                <img class="w-100" src="img/chiari-mockup.png">
+                <img class="w-100" src="img/chiari1.png">
             </div>
             <div class="col-6 col-md-3 mt-5">
                 <div class="skills">
@@ -44,11 +44,11 @@ Using the golden ratio in web design is mostly using the golden rectangle to det
 I’ve applied the golden ratio to the product page to emphasize on the product image as well as the call to action which are both strategically placed to catch the eye.</p>
             </div>
             <div class="col-12 col-md-6 mt-5">
-                <img class="w-100" src="img/chiari-mockup.png">
+                <img class="w-100" src="img/golden.png">
             </div>
 
             <div class="col-12 col-md-6 my-5">
-                <img class="w-100" src="img/chiari-mockup.png">
+                <img class="w-100" src="img/chiari-mob.png">
             </div>
             <div class="col-12 col-md-6 my-5">
                 <h2>Colour Palette</h2>
